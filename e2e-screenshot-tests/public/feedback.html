@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зворотний зв'язок</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f7f6;
+    }
+    .container {
+      max-width: 500px;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .success-msg {
+      display: none;
+      color: green;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Форма зворотного зв'язку</h1>
+    <form id="feedbackForm">
+      <div class="form-group">
+        <label for="feedbackName">Ім'я:</label>
+        <input id="feedbackName" type="text" placeholder="Ваше ім'я" required />
+      </div>
+      <div class="form-group">
+        <label for="feedbackEmail">Email:</label>
+        <input id="feedbackEmail" type="email" placeholder="Ваш email" required />
+      </div>
+      <div class="form-group">
+        <label for="feedbackComment">Повідомлення:</label>
+        <textarea id="feedbackComment" rows="4" placeholder="Ваш відгук..." required></textarea>
+      </div>
+      <button id="submitFeedback" type="submit">Надіслати</button>
+    </form>
+    <p id="feedbackSuccessMessage" class="success-msg">Дякуємо за ваш відгук! Нам дуже важлива ваша думка.</p>
+  </div>
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('feedbackSuccessMessage').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
