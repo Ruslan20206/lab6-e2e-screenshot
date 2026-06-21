@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Локальна сторінка</title>
+</head>
+<body>
+  <h1>Вітаємо на локальній сторінці</h1>
+  <form id="loginForm">
+    <input id="username" type="text" placeholder="Ім'я користувача" required />
+    <input id="password" type="password" placeholder="Пароль" required />
+    <button id="loginButton" type="submit">Увійти</button>
+  </form>
+  <p id="successMessage" style="display: none;">Успішний вхід!</p>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('successMessage').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
